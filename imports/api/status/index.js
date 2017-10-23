@@ -1,3 +1,5 @@
+// check server status
+
 export default function ({ router }) {
 
   router.get('/status',

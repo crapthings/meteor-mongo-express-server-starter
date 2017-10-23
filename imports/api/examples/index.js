@@ -1,3 +1,5 @@
+// an exanples route
+
 export default function ({ router }) {
 
   router.get('/examples',

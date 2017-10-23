@@ -1,5 +1,3 @@
-import routes from './routes'
-
 const routes = [
   require('./status').default,
   Meteor.isDevelopment && require('./examples').default,
