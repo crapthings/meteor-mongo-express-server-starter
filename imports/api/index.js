@@ -1,6 +1,7 @@
 const routes = [
-  require('./status').default,
   Meteor.isDevelopment && require('./examples').default,
+  require('./status').default,
+  require('./users').default,
   require('./routes').default,
 ]
 
