@@ -1,0 +1,18 @@
+{
+  "name": "meteor-mongo-express-server-starter",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "babel-runtime": "^6.20.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.4",
+    "meteor-node-stubs": "~0.2.4",
+    "moment": "^2.19.1"
+  }
+}
