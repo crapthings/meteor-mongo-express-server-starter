@@ -4,6 +4,8 @@ import bodyParser from 'body-parser'
 
 import registerRoutes from '/imports/api'
 
+import { requestLogin } from '/imports/middleware'
+
 const Express = function() {
   const _express = express()
   WebApp.rawConnectHandlers.use(Meteor.bindEnvironment(_express))
@@ -18,6 +20,9 @@ const PORT = process.env.POST || 3000
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+// uncomment to request login
+// router.use(requestLogin)
 
 registerRoutes({ router })
 
