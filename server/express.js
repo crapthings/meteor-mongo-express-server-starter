@@ -2,12 +2,12 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
-import LoadAPI from '/imports/api'
+import registerRoutes from '/imports/api'
 
 const Express = function() {
-  const fn = express()
-  WebApp.rawConnectHandlers.use(Meteor.bindEnvironment(fn))
-  return fn
+  const _express = express()
+  WebApp.rawConnectHandlers.use(Meteor.bindEnvironment(_express))
+  return _express
 }
 
 const app = Express()
@@ -19,7 +19,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-LoadAPI({ router })
+registerRoutes({ router })
 
 app.use('/api', Meteor.bindEnvironment(router))
 

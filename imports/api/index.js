@@ -1,17 +1,17 @@
 import routes from './routes'
 
-const endpoints = [
+const routes = [
   require('./status').default,
   Meteor.isDevelopment && require('./examples').default,
   require('./routes').default,
 ]
 
 export default function ({ router }) {
-  _.map(endpoints, registerEndpoint({ router }))
+  _.map(routes, registerRoutes({ router }))
 }
 
-function registerEndpoint({ router }) {
-  return function (endpoint) {
-    endpoint({ router })
+function registerRoutes({ router }) {
+  return function (route) {
+    route({ router })
   }
 }
