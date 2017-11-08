@@ -15,8 +15,6 @@ const Express = function() {
 const app = Express()
 const router = express.Router()
 
-const PORT = process.env.POST || 3000
-
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -27,7 +25,3 @@ app.use(bodyParser.json())
 registerRoutes({ router })
 
 app.use('/api', Meteor.bindEnvironment(router))
-
-app.listen(PORT, function () {
-  console.log(`service is running at ${PORT}`)
-})
